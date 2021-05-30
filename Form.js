@@ -58,7 +58,6 @@ function Form() {
             placeholder={placeholderOrigem}
             onValueChange={(value) =>{
                 setOrigem(value)
-                console.log(value)
             }
             }>
                 <Picker.Item label="De: " value='' key='origem' />
@@ -70,7 +69,10 @@ function Form() {
                 setDestino(value)
             }>
                 <Picker.Item label="Para: " value='' key='destino' />
-                {pick}
+                <Picker.Item label="Real Brasileiro" value='BRL' key='BRL' />
+                <Picker.Item label="Dolar Americano" value='USD' key='USD' />
+                <Picker.Item label="Euro" value='EUR' key='EUR' />
+                
         </Picker>
 
           <TouchableOpacity style={styles.button} onPress={handleButtonEuroPress}>
