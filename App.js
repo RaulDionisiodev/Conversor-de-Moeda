@@ -3,15 +3,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Form from './Form';
 import Header from './Header'
+import { RootSiblingParent } from 'react-native-root-siblings'
 
 export default function App() {
   return (
     <>
-      <Header />
-      <Form></Form>
-      <View style={styles.container}>
-        
-      </View>
+      <RootSiblingParent> 
+        <Header />
+        <Form></Form>
+        <View style={styles.container}> 
+        </View>
+      </RootSiblingParent> 
     </>
   );
 }

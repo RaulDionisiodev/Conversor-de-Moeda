@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import Coins from './coins';
-
+import Toast from 'react-native-root-toast';
 
 function Form() {
 
@@ -19,10 +19,12 @@ function Form() {
             let venda = responseJson[name].ask;
             let totalCompra = valor * compra;
             let totalvenda = valor * venda;
-            alert(`Valor para Compra: ${formataValor(totalCompra)} \n Valor para venda: ${formataValor(totalvenda)}`);
+            let toast = Toast.show(`Valor para Compra: ${formataValor(totalCompra)} 
+                     \nValor para venda: ${formataValor(totalvenda)}`, {
+                duration: Toast.durations.LONG,
+              });
         }catch (error) {
-            console.error(error);
-            alert(`Por favor tente novamente`)
+            let toast = Toast.show("Por favor tente novamente")
         }
     }
 
